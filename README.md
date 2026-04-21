@@ -1,9 +1,12 @@
 # 1 API TESTING
 1. Verify body output.
-2. Verify status code
+2. Verify status code:
+ Verify that correct status code is returned when request is sent.
 3. Verify repeated generation of users
-4. Verify Get for a specific user using the seed information. i.e randomuser.me/api/?seed=b4fc9867c4df19fe
-5. Update info 
+Verify user is able to make repeated API calls without any error being experienced.
+4. Verify Get for a specific user 
+Verify user is able to make api call for specific users using the seed info. i.e make a call with the seed parameters i.e randomuser.me/api/?seed=b4fc9867c4df19fe
+5. 
 6. 
 
 
@@ -23,7 +26,7 @@ pm.test("Returned data is an array", function () {
     pm.expect(Array.isArray(jsonData)).to.eql(false);
 });
 
-# CODING TASK
+# 2 CODING TASK
 
 
 
@@ -46,6 +49,11 @@ Title: verify validation of Email field
 Steps:
  - Access the app
  - input the correct email
+ - 
+
+Expected Result: Email is validated correctly and no error is displayed.
+
+Actual Result:
 
  #### Testcase ID: TC003
  Title: Login with incorrect password
