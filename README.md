@@ -1,20 +1,31 @@
 # 1 API TESTING
 1. Verify body output.
+Verify the response body matches the correct format output with all required fields displayed.
 2. Verify status code:
  Verify that correct status code is returned when request is sent.
 3. Verify repeated generation of users
 Verify user is able to make repeated API calls without any error being experienced.
 4. Verify Get for a specific user 
 Verify user is able to make api call for specific users using the seed info. i.e make a call with the seed parameters i.e randomuser.me/api/?seed=b4fc9867c4df19fe
-5. 
-6. 
+5. Validate filtering of  results using unsupported queries 
+Verify an error is displayed when trying to filter users using an unsupported query type e.g for gender, use special characters
+6. Verify status output using a malformed request
+Verify user is unable to send a request using a malformed request.
 
 
 ### expected status codes
 200 - OK - Confirms successful generation of a user.
 404 - NOT FOUND Confirms the request made could not be found due to possible malformed endpoint or connection to the endpoint.
+401 - request without auth or with invalid token.
+403 - Request with valid auth but no permission.
+400 - Invalid JSON or wrong content type.
 
 ### validation points
+- Response body 
+- Reponse time
+- Status codes
+- Response size
+- Request size
 
 ### Bonus:
 pm.test("Status code is 200", function () {
