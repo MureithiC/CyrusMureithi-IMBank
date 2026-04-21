@@ -11,14 +11,16 @@ Verify user is able to make api call for specific users using the seed info. i.e
 Verify an error is displayed when trying to filter users using an unsupported query type e.g for gender, use special characters
 6. Verify status output using a malformed request
 Verify user is unable to send a request using a malformed request.
-
+7. Verify API call under high load
+Set up performance run with high load making sure memory is high. Verify that system remains stable and no errors are displayed.
+ 
 
 ### expected status codes
-200 - OK - Confirms successful generation of a user.
-404 - NOT FOUND Confirms the request made could not be found due to possible malformed endpoint or connection to the endpoint.
-401 - request without auth or with invalid token.
-403 - Request with valid auth but no permission.
-400 - Invalid JSON or wrong content type.
+- 200 - OK - Confirms successful generation of a user.
+- 404 - NOT FOUND Confirms the request made could not be found due to possible malformed endpoint or connection to the endpoint.
+- 401 - request without auth or with invalid token.
+- 403 - Request with valid auth but no permission.
+- 400 - Invalid JSON or wrong content type.
 
 ### validation points
 - Response body 
