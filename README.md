@@ -1,4 +1,4 @@
-# API TESTING
+# 1 API TESTING
 1. Verify body output.
 2. Verify status code
 3. Verify repeated generation of users
@@ -7,8 +7,11 @@
 6. 
 
 
+### expected status codes
 200 - OK - Confirms successful generation of a user.
+404 - NOT FOUND Confirms the request made could not be found due to possible malformed endpoint or connection to the endpoint.
 
+### validation points
 
 ### Bonus:
 pm.test("Status code is 200", function () {
@@ -22,13 +25,63 @@ pm.test("Returned data is an array", function () {
 
 # CODING TASK
 
-# UI TESTING
-- Login with correct email and password
-- Validaation of Email field
-- Login with incorrect password
-- Login with incorrect email
-- Login with no credentials/expired credentials
 
+
+# 3 UI TESTING
+ #### Testcase ID: TC001
+ Title: Verify User can login with correct credentials.
+ Steps:
+ - Access the app
+ - input the correct email
+ - input correct password.
+ - Clic on login
+
+ Expected result:
+ User is able to login to the app and homepage is displayed
+
+ Actual result:
+
+ #### Testcase ID: TC002
+Title: verify validation of Email field
+Steps:
+ - Access the app
+ - input the correct email
+
+ #### Testcase ID: TC003
+ Title: Login with incorrect password
+ Steps:
+ - Access the app
+ - input the correct email
+ - Enter incorrect password
+ - Click on login button
+
+Expected Result: An error ndicating that email/password is displayed. User is asked to try log in again.
+
+Actual Result:
+
+ #### Testcase ID: TC004
+ Title: Login with incorrect email
+ Steps:
+ - Access the app
+ - input the incorrect email
+ - Enter correct password 
+ - Click on login
+
+Expected Result: An error ndicating that email/password is displayed. User is asked to try log in again
+
+Actual Result:
+
+ #### Testcase ID: TC005
+ Title: Login with no credentials/expired credentials
+ Steps:
+ - Access the app
+ - Click on login button
+
+Expected Result: An error ndicating that email/password is displayed. User is asked to try log in again
+
+Actual Result:
+
+### Possible bugs
 3. User is able to login with an expired or password that was previously changed.
 Login button does not respond when clicked
 No validation occurs, users can login with any user.
@@ -37,8 +90,13 @@ No validation occurs, users can login with any user.
 
 
 # 4. BUG REPORT
+ Bug ID: BUG001
  Title: Login button does not respond when trying to login.
  Description: When the login button is clicked, nothing happens despite email and password fields being field.
+ Steps to reproduce:
+  - Access he url
+  - input correct email and password
+  - Click on the login button
  Expected Result: When click, the login button should be responsive and user is navigated to the homepage.
  Actual Result: Nothing happens when the login button is clicked.
  Environment Used: iphone 16 Pro Max, iOS 26
